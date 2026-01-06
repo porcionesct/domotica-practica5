@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autómatas y relé programable: Definición</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 5. Vivienda domótica. Logo</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Práctica 5 (PLC)</a></li>
+            <li><a href="rubrica_5.html">Rúbrica evaluación</a></li> 
+            <li><a href="automata_5.html">Autómata programable</a></li>
+            <li><a href="logo_5.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="prl.html">Seguridad y PRL</a></li>
+
+
+        </ul>
+    </nav>
+
+    <div class="container">
+<h2>5.- Vivienda domótica controlada mediante rele programable (LOGO)</h2>
+
+        <div class="section">
+                        
+<h3 class="section-header">1. Asignación de señales en el rele programable.</h3>
+
+          <ul>
+           <p><strong>Entradas digitales</strong></p>
+           <li>I1: Pulsador marcha (S1) — contacto NO.</li> 
+           <li>I2: Pulsador paro (S1) — contacto NC.</li>
+           <li>I3: Pulsador marcha (S2) — contacto NO.</li> 
+           <li>I4: Pulsador paro (S2) — contacto NC.</li>
+           <li>I5: Pulsador marcha (S3) — contacto NO.</li>
+           <li>I6: Pulsador paro (S3) — contacto NC. </li>
+           <li>I7: Pulsador marcha (S4) — contacto NO.</li> 
+           <li>I8: Pulsador paro (S4) — contacto NC.</li>  
+           <li>I9: Detector de movimiento (DM).</li> 
+
+           <p><strong>Salidas digitales</strong></p>
+
+           <li>Q1: Piloto verde (PV).</li> 
+           <li>Q2: Piloto rojo (PR). </li>
+           <li>Q3: Piloto verde 2 (PVA). Piloto Verde Alarma</li> 
+           <li>Q4: Alarma/lámpara (L1).</li>
+           <li>Q5: Lámparas (L2). </li>
+           <li>Q6: Contactor motor subir.  </li>
+           <li>Q7: Contactor motor bajar. </li> 
+          </ul>  
+<P><strong>Esquema multifilar de la práctica 5.</strong></p>
+        
+<div class="automata-image">
+     <img id="myImg" src="images_1/multifilar_logo_5.jpg" alt="Autómata S7 200 CPU200" style="cursor: pointer;">
+</div>
+      
+          </div>
+<div id="myModal" class="modal">
+
+  <span class="close">&times;</span>
+
+  <img class="modal-content" id="img01">
+
+  <div id="caption"></div>
+
+</div>
+<script>
+// Obtener el modal
+var modal = document.getElementById("myModal");
+
+// Obtener la imagen y el elemento dentro del modal
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Obtener el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close")[0];
+
+// Cuando el usuario hace clic en <span> (x), cierra el modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+// Opcional: Cerrar el modal al hacer clic en cualquier parte fuera de la imagen
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

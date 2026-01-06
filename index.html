@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 5. Vivienda domótica. Descripción</title>
+    <!-- Asumiendo que usarás el mismo archivo de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .section-header {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        ul.list-indented {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 5. Vivienda domótica. Descripción</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="active"><a href="index.html">Práctica 5 (PLC)</a></li>
+            <li><a href="rubrica_5.html">Rúbrica evaluación</a></li>
+            <li><a href="automata_5.html">Autómata programable</a></li>
+            <li><a href="logo_5.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="prl.html">Seguridad y PRL</a></li>
+                        
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>5.- Vivienda domótica controlada mediante Autómata Programable (PLC)</h2>
+
+        <div class="section">
+            <h3 class="section-header">1. Descripción de la Unidad</h3>
+            <p>Se desea automatizar una vivienda usando un PLC (o lógica de relés) y los elementos eléctricos 
+disponibles, de manera que el sistema muestre estados visuales (pilotos y bombillas), active una alarma 
+cuando proceda y realice el control de una persiana. El objetivo es conseguir un sistema sencillo, seguro 
+y fácilmente comprobable en funcionamiento.</p>
+
+
+<h3 class="section-header">2. Requisitos funcionales</h3>
+            <p><strong>2.1.- Activado/desactivado del circuito:</strong> 
+Cuando se accione el pulsador de marcha S1, el sistema debe pasar a modo automático, el piloto verde 1, encendido. 
+Cuando se presione el pulsador de paro S1, el sistema debe desconectarse y el piloto rojo se encenderá.</p>  
+<p><strong>2.2.- Armar la alarma: </strong>
+Cuando se presione el pulsador de marcha S2, la alarma debe pasar a modo armado, piloto verde 2. 
+En modo alarma, la alarma podrá activarse si el detector de movimiento detecta presencia, simulada 
+con una lámpara y manteniéndose el piloto verde 2 encendido. </p>
+<p><strong>2.3.- Desarmar la alarma: </strong>
+Cuando se pulse el pulsador de paro S2, la alarma debe desarmarse. 
+En reposo, las lámparas de la vivienda, bombilla y el piloto verde1 deben estar encendidos; la alarma y 
+el piloto rojo deberán estar apagados.</p> 
+<p><strong>2.4.- Detección de intrusión: </strong>
+Si el sistema está armado y el detector de movimiento detecta presencia, se activará la alarma (sonora 
+y/o luminosa) inmediatamente o según temporización definida. </p>
+<p><strong>2.5.- Subir persiana: </strong>
+Cuando se accione el pulsador de marcha S3, el motor debe ponerse en funcionamiento, aunque se 
+deje de pulsar, hasta llegar que se accione en final de carrera pulsador de paro S3 o bien de pulse 
+nuevamente S3.</p>  
+<p><strong>2.6.- Bajar persiana: </strong>
+Cuando se accione el pulsador de marcha S4, el motor debe ponerse en funcionamiento, aunque se 
+deje de pulsar, hasta llegar que se accione en final de carrera pulsador de paro S4 o bien de pulse 
+nuevamente S4.</p>  
+<p><strong>2.7.- Mantenimiento y seguridad:</strong> 
+El pulsador de paro debe actuar como interrupción prioritaria para desactivar el sistema (contacto NC de 
+parada de seguridad). 
+Se debe poder visualizar el estado del sistema mediante pilotos (rojo = reposo, verde = armado).</p>
+
+<h3 class="section-header">3. Material suministrado / recursos.</h3>
+
+          <ul>
+           <li>4 pulsadores paro/marcha (cuatro pulsadores verdes-marcha y cuatro pulsadores rojos-paro).</li> 
+           <li>1 detector de movimiento (entrada digital al PLC).</li>
+           <li>3 contactores (Adaptar el voltaje 230 V a 24 V en las entradas e inversión de giro del motor).</li> 
+           <li>3 pilotos (2 verdes y rojo).</li>
+           <li>1 lámpara.</li>
+           <li>1 alarma (sirena/luz). </li>
+           <li>1 motor monofásico con inversión de giro.</li> 
+           <li>PLC con entradas/ salidas digitales suficientes.</li>  
+          </ul>
+       </div>
+
+
+        <div class="section">
+            <h3 class="section-header">4. Justificación</h3>
+            <p>El uso de PLC es esencial en la automatización industrial y en instalaciones modernas. El control de una vivienda mediante PLC, aunque básico, es un punto de partida fundamental para comprender:</p>
+            <ul class="list-indented">
+                <li>La lógica cableada y su conversión en lógica programada.</li>
+                <li>La configuración de entradas y salidas digitales.</li>
+                <li>El manejo de señales mediante actuadores y pilotos de indicación.</li>
+                <li>La importancia de la seguridad, orden y precisión en instalaciones automatizadas.</li>
+            </ul>
+            <p>Esta unidad proporciona competencias profesionales básicas necesarias para avanzar hacia sistemas más complejos, como temporizaciones, enclavamientos o automatismos industriales.</p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">5. Contexto</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Público Objetivo</strong></td>
+                        <td>Ciclos formativos de grado medio o superior (Electricidad y Electrónica, Instalaciones, Mantenimiento, Automatización).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulos Profesionales</strong></td>
+                        <td>Automatismos Eléctricos, Automatismos Programables o Sistemas de Control.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Duración Estimada</strong></td>
+                        <td>6–8 horas (teoría + práctica).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Espacio y Recursos</strong></td>
+                        <td>Aula-taller con paneles de prácticas, PLC básico (Siemens LOGO!, S7-1200, Schneider Zelio o similar), simuladores o software de programación.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">6. Competencias y Resultados de Aprendizaje</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Resultado de Aprendizaje (RA)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>RA1</strong></td>
+                        <td>Interpreta esquemas eléctricos y simbología normalizada.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RA2</strong></td>
+                        <td>Configura entradas y salidas digitales en un PLC.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RA3</strong></td>
+                        <td>Programa un control básico de iluminación mediante lógica programada.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RA4</strong></td>
+                        <td>Realiza el montaje físico siguiendo normas de seguridad y calidad.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RA5</strong></td>
+                        <td>Comprueba, diagnostica y soluciona fallos en el sistema.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">7. Metodología y Métodos de Enseñanza</h3>
+            <p><strong>Metodología:</strong> Activa, práctica y competencial, basada en Aprendizaje Basado en Problemas (ABP) y Aprendizaje por Proyectos (diseñar, cablear y programar el sistema).</p>
+            <p><strong>Métodos Concretos:</strong></p>
+            <ul class="list-indented">
+                <li>Demostración guiada + práctica autónoma.</li>
+                <li>Trabajo manipulativo (uso de herramientas, cableado real).</li>
+                <li>Simulación previa con software para verificar la lógica.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">8 Actividades de Aprendizaje</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Actividad</th>
+                        <th>Objetivo RA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Teoría</strong> (60 min)</td>
+                        <td>Introducción a PLC (E/S, alimentación), simbología y esquemas.</td>
+                        <td>RA1, RA2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diseño</strong> (60 min)</td>
+                        <td>Interpretación del esquema básico (Pulsador, Luminaria, Piloto). Definición de E/S.</td>
+                        <td>RA1, RA2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Programación</strong> (90 min)</td>
+                        <td>Creación del programa en Ladder (o FBD): <ul><li>I1 → Q1 (luz)</li><li>Q1 → Q2 (piloto)</li></ul></td>
+                        <td>RA3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Montaje</strong> (120 min)</td>
+                        <td>Cableado de entradas (pulsador) y salidas (lámpara y piloto) en el panel de prácticas, siguiendo las normas de seguridad.</td>
+                        <td>RA4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prueba</strong> (60 min)</td>
+                        <td>Puesta en marcha, prueba funcional (pulsar, soltar, observar la señalización). Ajuste y corrección de fallos.</td>
+                        <td>RA5</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Final</strong> (90 min)</td>
+                        <td>Documentación del proyecto (esquema, código, informe).</td>
+                        <td>RA4, RA5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">9. Agrupamientos</h3>
+            <ul class="list-indented">
+                <li><strong>Individual:</strong> Programación.</li>
+                <li><strong>Parejas:</strong> Montaje físico (fomenta la cooperación y revisión).</li>
+                <li><strong>Gran Grupo:</strong> Análisis, debates y correcciones guiadas.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3 class="section-header">10. Atención a la Diversidad e Inclusión</h3>
+            <ul class="list-indented">
+                <li>Uso de **material visual ampliado** y esquemas en colores.</li>
+                <li>Uso de **simuladores** para el alumnado con dificultades motrices.</li>
+                <li><strong>Andamiaje progresivo</strong> en la dificultad:
+                    <ul>
+                        <li>Nivel Básico: Encendido directo y señalización.</li>
+                        <li>Nivel Avanzado: Incorporar temporización o un enclavamiento de seguridad.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">11. Evaluación</h3>
+            <h4>Criterios de Evaluación:</h4>
+            <ol>
+                <li>Interpreta correctamente los esquemas eléctricos.</li>
+                <li>Configura adecuadamente las entradas y salidas del PLC.</li>
+                <li>Realiza un programa funcional en Ladder u otro lenguaje.</li>
+                <li>Monta el circuito con orden, seguridad y calidad.</li>
+                <li>Detecta y corrige errores en el funcionamiento.</li>
+            </ol>
+            <h4>Instrumentos / Técnicas:</h4>
+            <ul class="list-indented">
+                <li>Rúbrica de desempeño práctico.</li>
+                <li>Lista de cotejo (Checklist) para el montaje.</li>
+                <li>Observación directa del trabajo en equipo.</li>
+                <li>Dossier técnico entregado por el alumno.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">12. Recursos y Materiales</h3>
+            <ul class="list-indented">
+                <li><strong>Hardware:</strong> PLC (ej. LOGO!), fuente de alimentación, lámpara/luminaria, piloto de señalización (rojo/verde), pulsador NA, cables, regletas, multímetro.</li>
+                <li><strong>Software:</strong> Software de programación del PLC (ej. LOGO!Soft Comfort, TIA Portal Básico) y simulador.</li>
+                <li><strong>Documentación:</strong> Plantillas de esquema y normas de seguridad.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">13. Seguridad y Normativa</h3>
+            <ul class="list-indented">
+                <li>Obligación de trabajar con **baja tensión** durante las prácticas de cableado (ej. 24V DC).</li>
+                <li>Procedimiento de **Corte de Alimentación** estricto antes de cualquier manipulación.</li>
+                <li>Normativa eléctrica básica (colores, protecciones).</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3 class="section-header">14. Producto Final</h3>
+            <p>El alumnado entrega y expone:</p>
+            <ul class="list-indented">
+                <li>Esquema del circuito (multifilar y unifilar).</li>
+                <li>Código del programa del PLC (Ladder).</li>
+                <li>Informe técnico (dificultades y soluciones).</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

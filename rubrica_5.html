@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rúbrica de Evaluación Práctica (PLC)</title>
+    <!-- Asumiendo que usarás el mismo archivo de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .section-header {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .level-4 { background-color: #d4edda; } /* Excelente - Verde claro */
+        .level-3 { background-color: #fff3cd; } /* Notable - Amarillo claro */
+        .level-2 { background-color: #f8d7da; } /* Aceptable - Rojo claro */
+        .level-1 { background-color: #f7e0e3; } /* Insuficiente - Gris/Rosa */
+
+        /* ANCHO MODIFICADO DE 15% A 20% */
+        .rubric-table th:nth-child(1), .rubric-table td:nth-child(1) { width: 20%; font-weight: bold; } 
+        /* Resto de columnas ajustadas: 20% + 23% + 19% + 19% + 19% = 100% */
+        .rubric-table th:nth-child(2), .rubric-table td:nth-child(2) { width: 23%; } 
+        .rubric-table th:nth-child(3), .rubric-table td:nth-child(3) { width: 19%; } 
+        .rubric-table th:nth-child(4), .rubric-table td:nth-child(4) { width: 19%; } 
+        .rubric-table th:nth-child(5), .rubric-table td:nth-child(5) { width: 19%; } 
+
+
+        .weight-table th:nth-child(2), .weight-table td:nth-child(2) { text-align: center; }
+        .weight-table th:nth-child(3), .weight-table td:nth-child(3) { text-align: center; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 5. Vivienda domótica. Rúbrica de Evaluación </p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Práctica 5 (PLC)</a></li>
+            <li class="active"><a href="rubrica_5.html">Rúbrica evaluación</a></li>
+            <li><a href="automata_5.html">Autómata programable</a></li>
+            <li><a href="logo_5.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="prl.html">Seguridad y PRL</a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Rúbrica de Evaluación Práctica 5: Vivienda domótica con PLC</h2>
+
+        <p>Esta herramienta se utiliza para evaluar las competencias de diseño, montaje, programación y verificación de la práctica de control de iluminación con PLC.</p>
+        
+        <div class="section">
+            <h3 class="section-header">1. Criterios y Niveles de Logro</h3>
+            <table class="rubric-table">
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <!-- Valores Actualizados: 10, 7, 3, 1 -->
+                        <th>Excelente (10)</th>
+                        <th>Notable (7)</th>
+                        <th>Aceptable (3)</th>
+                        <th>Insuficiente (1)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Funcionamiento del sistema</strong></td>
+                        <td class="level-4">El sistema funciona de forma completa, estable y sin errores. Todas las maniobras responden correctamente según el diseño.</td>
+                        <td class="level-3">El sistema funciona correctamente, con pequeños ajustes no críticos o leves retrasos aceptables.</td>
+                        <td class="level-2">El sistema funciona parcialmente; algunas partes responden, pero presenta fallos intermitentes o maniobras incompletas.</td>
+                        <td class="level-1">El sistema no funciona o presenta fallos que impiden su uso.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Canalizaciones</strong></td>
+                        <td class="level-4">Canalizaciones perfectamente ejecutadas: alineadas, fijadas, con curvas limpias y siguiendo normativa. Uso adecuado de tubos, bandejas o canaletas.</td>
+                        <td class="level-3">Canalizaciones bien realizadas, con pequeños defectos estéticos o de alineación, pero correctas funcional y normativamente.</td>
+                        <td class="level-2">Canalizaciones funcionales pero con varios defectos: fijaciones irregulares, curvas imprecisas o planificación deficiente.</td>
+                        <td class="level-1">Canalizaciones mal ejecutadas: desordenadas, sin fijación, inseguras o contrarias a la normativa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Conexiones y conductores</strong></td>
+                        <td class="level-4">Conexiones firmes, identificadas, limpias y bien organizadas. Uso correcto de colores, secciones y terminales. Cableado ordenado y profesional.</td>
+                        <td class="level-3">Conexiones correctas en general, con algún pequeño error estético u organizativo. Colores y secciones mayormente adecuados.</td>
+                        <td class="level-2">Conexiones funcionales pero con errores visibles: aprietes irregulares, colores incorrectos o desorden en el cableado.</td>
+                        <td class="level-1">Conexiones incorrectas, peligrosas o confusas: colores erróneos, hilos sueltos, empalmes defectuosos o falta de seguridad.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Medidas eléctricas</strong></td>
+                        <td class="level-4">Realiza mediciones precisas, interpreta correctamente los valores y utiliza adecuadamente el instrumento. Identifica anomalías y propone correcciones.</td>
+                        <td class="level-3">Realiza mediciones correctas y maneja bien el instrumento; interpreta la mayoría de los valores adecuadamente.</td>
+                        <td class="level-2">Mide con errores ocasionales; interpretación limitada o con dudas; manejo del instrumento mejorable.</td>
+                        <td class="level-1">No sabe realizar mediciones correctamente, las interpreta mal o usa el instrumento de forma insegura.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">2. Ponderación y Cálculo de la Nota Final</h3>
+            <p>La nota final se calcula multiplicando la puntuación obtenida en cada criterio por su peso porcentual y sumando los resultados.</p>
+
+            <table class="weight-table">
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>Puntuación Máxima</th>
+                        <th>Peso (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. Funcionamiento del sistema</td>
+                        <td>10</td>
+                        <td>40%</td>
+                    </tr>
+                    <tr>
+                        <td>2. Canalizaciones</td>
+                        <td>10</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td>3. Conexiones y conductores</td>
+                        <td>10</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>4. Medidas eléctricas</td>
+                        <td>10</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>Total</td>
+                        <td>10</td>
+                        <td>100%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>Fórmula de Cálculo:</h4>
+            <p>$$
+            \text{Nota Final} = (C1 \times 0.40) + (C2 \times 0.20) + (C3 \times 0.10) + (C4 \times 0.30)
+            $$</p>
+            <p>Donde C1, C2, C3 y C4 son las puntuaciones obtenidas (10, 7, 3 ó 1) en cada criterio.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
